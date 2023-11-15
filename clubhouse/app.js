@@ -10,12 +10,13 @@ const mongoose = require("mongoose");
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const clubhouseRouter = require('./routes/clubhouse')
 const { strict } = require('assert');
 
 const app = express();
 
 
-const mongoDB = 'mongodb+srv://shriharshdev:NG2yr3gkz9i2J6Cf@cluster0.chjggpu.mongodb.net/?retryWrites=true&w=majority'
+const mongoDB = 'mongodb+srv://shriharshdev:NG2yr3gkz9i2J6Cf@cluster0.chjggpu.mongodb.net/clubhouse?retryWrites=true&w=majority'
 mongoose.set("strict",false)
 main().catch((err)=>console.log(err))
 async function main(){
@@ -32,9 +33,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({ secret: "cats", resave: false, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session())
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/clubhouse',clubhouseRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
