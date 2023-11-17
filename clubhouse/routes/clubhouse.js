@@ -11,9 +11,12 @@ router.post("/register",register_controller.register_user_post)
 router.get("/posts",post_controller.post_list)
 router.get("/create/post",post_controller.create_post_get)
 router.post("/create/post",post_controller.create_post_post)
+router.get("/posts/:id",post_controller.post_detail)
 
-router.get("/fourms",forum_controller.forums_list)
+router.get("/forums",forum_controller.forums_list)
 router.get("/create/forum",forum_controller.forum_create_get)
 router.post("/create/forum",forum_controller.forum_create_post)
+router.get("/forums/:id",forum_controller.forum_posts)
+
 
 module.exports = router
