@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <title>Create Posts</title>
+    </head>
+    <body>
+        <h1>Create Poat</h1>
+        <form action="" method="post">
+            <label for="title">Title</label>
+            <input type="text" name="title" placeholder="title">
+            <label for="post">Post</label>
+            <input type="text" name="post" placeholder="post">
+            <% forums.forEach(function(forum){ %>
+                <input type="checkbox" name="forum" id="<%= forum._id %>" value="<%= forum._id %>" <% if (forum.checked) { %> checked <% } %> />
+                <label for="<%= forum._id%>"><%= forum.title %></label>
+            <% }) %>
+            <button>Submit</button>
+        </form>
+    </body>
+</html>
+
+
+
+  

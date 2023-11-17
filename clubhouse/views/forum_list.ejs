@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum List</title>
+</head>
+<body>
+    <% forums.forEach(function(forum){ %>
+        <a href="/clubhouse/forums/<%= forum._id %>"><%= forum.title %></a>
+    <% }) %>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post List</title>
+</head>
+<body>
+    <h1>Post Details</h1>
+    <% if (post) { %>
+        <h2>Title: <%= post.title %></h2>
+        <p>Content: <%= post.post %></p>
+    <% } else { %>
+        <p>No post found.</p>
+    <% } %>
+</body>
+</html>

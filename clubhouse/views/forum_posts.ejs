@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= forum.title %> Posts</title>
+</head>
+<body>
+    
+    <h1><%= forum.title %> Posts</h1>
+
+    <h2>Posts:</h2>
+    <ul>
+        <% posts.forEach(function(post) { %>
+            <a href="/clubhouse/posts/<%= post._id %>"><%= post.title %></a>
+        <% }) %>
+    </ul>
+</body>
+</html>
